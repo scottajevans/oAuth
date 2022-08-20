@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# oAuth test app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a quick test app to handle oAuth through Google oAuth.
+In order to test this out there are some things you will need to set up.
 
-## Available Scripts
+## Pre-requisites:
 
-In the project directory, you can run:
+- Copy .env.example to a new file: `cp .env.example .env`
+- Go to [Google cloud console](https://console.cloud.google.com/) and either sign in/up (probably using Google oAuth)
+- Create a new project
+- Give it a name (don't worry about an organisation, you can leave this blank)
+- Select the project, then in menu find 'APIs & Services' and select 'Credentials'
+- Configure consent screen, select external and then create!
+- Set up your app:
+  - Set the app name
+  - Set the user support email
+  - Set the developer contact information
+- Move to scopes and add scopes for email and profile (the first 2 options)
+- Next, add some test emails
+- Once complete, head back to the Credentials screen and select 'Create credentials' at the top
+- Select 'OAuth client ID' from the drop down
+- Select 'Web application' on the next screen (name the app if you like)
+- In URIs, add http://localhost:3000 and http://localhost
+- In Redirect URIs add the same 2 URIs.
+- Now copy your client ID and paste it into the value for REACT_APP_GOOGLE_OAUTH_CLIENT_ID in your .env file
 
+Once you have followed the above you are ready to go!
+
+# Set up
+
+### `npm install`
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser if it hasn't automatically.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enjoy signing in and out with oAuth!
